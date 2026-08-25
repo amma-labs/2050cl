@@ -210,17 +210,12 @@
                   </a>
 
                   <nav className="hidden lg:flex items-center gap-6 text-xs font-medium tracking-wide text-slate-600 uppercase">
-                    {navItems.map(item => (
-                      <a
-                        key={item.id}
-                        href={item.link}
-                        className={`hover:text-slate-900 transition pb-0.5 ${
-                          activeSection === item.id ? 'text-slate-900 border-b-2 border-red-800 font-semibold' : ''
-                        }`}
-                      >
-                        {item.label}
-                      </a>
-                    ))}
+                    <a href="index.html#quienes-somos" className={`hover:text-slate-900 transition pb-0.5 ${activeSection === "quienes-somos" ? "text-slate-900 border-b-2 border-red-800 font-semibold" : ""}`}>Quiénes Somos</a>
+                    <a href="index.html#areas" className={`hover:text-slate-900 transition pb-0.5 ${activeSection === "areas" ? "text-slate-900 border-b-2 border-red-800 font-semibold" : ""}`}>Áreas</a>
+                    <a href="index.html#profesionales" className={`hover:text-slate-900 transition pb-0.5 ${activeSection === "profesionales" ? "text-slate-900 border-b-2 border-red-800 font-semibold" : ""}`}>Profesionales</a>
+                    <a href="servicios.html" className={`hover:text-slate-900 transition pb-0.5 ${activeSection === "servicios" ? "text-slate-900 border-b-2 border-red-800 font-semibold" : ""}`}>Servicios</a>
+                    <a href="servicios.html#experiencia" className={`hover:text-slate-900 transition pb-0.5 ${activeSection === "experiencia" ? "text-slate-900 border-b-2 border-red-800 font-semibold" : ""}`}>Experiencia</a>
+                    <a href="servicios.html#publicaciones" className={`hover:text-slate-900 transition pb-0.5 ${activeSection === "publicaciones" ? "text-slate-900 border-b-2 border-red-800 font-semibold" : ""}`}>Publicaciones</a>
                   </nav>
 
                   <div className="flex items-center gap-3">

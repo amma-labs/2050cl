@@ -5,18 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo Sostenible & Territorio</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- React 18, ReactDOM & Babel -->
     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -150,6 +143,7 @@
       function App() {
         const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
         const [activeSection, setActiveSection] = useState('inicio');
+        const [hiddenSections] = useState(['servicios', 'experiencia', 'publicaciones']);
 
         const navItems = [
           { id: 'inicio', label: 'Inicio' },
@@ -158,7 +152,8 @@
           { id: 'servicios', label: 'Servicios' },
           { id: 'experiencia', label: 'Experiencia' },
           { id: 'publicaciones', label: 'Publicaciones' },
-          { id: 'profesionales', label: 'Profesionales' }
+          { id: 'profesionales', label: 'Profesionales' },
+          { id: 'contacto', label: 'Contacto' }
         ];
 
         useEffect(() => {
@@ -166,7 +161,8 @@
             const scrollPosition = window.scrollY + 120;
             let current = 'inicio';
             
-            navItems.forEach(item => {
+            const visibleItems = navItems.filter(item => !hiddenSections.includes(item.id));
+            visibleItems.forEach(item => {
               const element = document.getElementById(item.id);
               if (element) {
                 const offsetTop = element.offsetTop;
@@ -181,7 +177,7 @@
 
           window.addEventListener('scroll', handleScroll);
           return () => window.removeEventListener('scroll', handleScroll);
-        }, []);
+        }, [hiddenSections, navItems]);
 
         const scrollToSection = (sectionId) => {
           setMobileMenuOpen(false);
@@ -190,6 +186,8 @@
             element.scrollIntoView({ behavior: 'smooth' });
           }
         };
+
+        const isHiddenSection = (sectionId) => hiddenSections.includes(sectionId);
 
         return (
           <div className="min-h-screen bg-[#FAF9F6] text-slate-900">
@@ -274,10 +272,10 @@
 
             <main className="pt-20">
               
-              <section id="inicio" className="relative border-b border-slate-200 py-20 lg:py-28 bg-white">
+              {/* ===== 1. INICIO (scroll) ===== */}
+              <section id="inicio" className="relative border-b border-slate-200 py-12 lg:py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
-                  <div className="lg:col-span-7 space-y-8">
-                    
+                  <div className="lg:col-span-7 space-y-6">
                     <h1 className="font-title text-4xl sm:text-5xl font-medium leading-[1.12] text-slate-900">
                       Transformando datos socioespaciales en decisiones estratégicas de territorio.
                     </h1>
@@ -296,7 +294,7 @@
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 space-y-6">
+                  <div className="lg:col-span-5 space-y-4">
                     <div className="bg-slate-900 text-white p-2 border border-slate-800 relative shadow-lg group overflow-hidden">
                       <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
                         <img 
@@ -319,43 +317,39 @@
                       </div>
                     </div>
 
-                    <div className="bg-[#FAF9F6] p-6 border border-slate-200 space-y-4">
-                      <h3 className="font-title text-base font-semibold border-b border-slate-200 pb-2 text-slate-900">
-                        En Cifras
-                      </h3>
-                      <div className="grid grid-cols-3 gap-4 text-center">
-                        <div>
-                          <div className="font-title text-2xl font-bold text-slate-900">15+</div>
-                          <div className="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">Años Exp.</div>
-                        </div>
-                        <div>
-                          <div className="font-title text-2xl font-bold text-slate-900">40+</div>
-                          <div className="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">Proyectos</div>
-                        </div>
-                        <div>
-                          <div className="font-title text-2xl font-bold text-slate-900">12</div>
-                          <div className="text-[10px] text-slate-500 uppercase tracking-wider mt-0.5">Regiones</div>
-                        </div>
+                    <div className="bg-[#FAF9F6] p-4 border border-slate-200 grid grid-cols-3 gap-2 text-center">
+                      <div>
+                        <div className="font-title text-xl font-bold text-slate-900">15+</div>
+                        <div className="text-[9px] text-slate-500 uppercase tracking-wider">Años Exp.</div>
+                      </div>
+                      <div>
+                        <div className="font-title text-xl font-bold text-slate-900">40+</div>
+                        <div className="text-[9px] text-slate-500 uppercase tracking-wider">Proyectos</div>
+                      </div>
+                      <div>
+                        <div className="font-title text-xl font-bold text-slate-900">12</div>
+                        <div className="text-[9px] text-slate-500 uppercase tracking-wider">Regiones</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </section>
 
-              <section id="quienes-somos" className="py-20 border-b border-slate-200 bg-[#FAF9F6]">
+              {/* ===== 2. QUIÉNES SOMOS (scroll) ===== */}
+              <section id="quienes-somos" className="py-12 border-b border-slate-200 bg-[#FAF9F6]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6">
+                    <div className="space-y-4">
                       <span className="text-xs uppercase tracking-widest font-mono text-slate-500">01 / Quiénes Somos</span>
                       <h2 className="font-title text-3xl sm:text-4xl font-medium text-slate-900">
                         Antropología y territorio: nuestro sello
                       </h2>
-                      <div className="space-y-4 text-slate-600 text-sm leading-relaxed font-light">
+                      <div className="space-y-3 text-slate-600 text-sm leading-relaxed font-light">
                         <p>
-                          Somos una consultora especializada en <span className="font-semibold text-slate-900">Inteligencia Territorial</span>, donde la antropología se encuentra con los geodatos para entender la complejidad de los territorios. Nuestro enfoque interdisciplinario nos permite ir más allá de los mapas y las estadísticas, incorporando la densidad cultural, las dinámicas sociales y las percepciones comunitarias en cada diagnóstico y recomendación.
+                          Somos una consultora especializada en <span className="font-semibold text-slate-900">Inteligencia Territorial</span>, donde la antropología se encuentra con los geodatos para entender la complejidad de los territorios.
                         </p>
                         <p>
-                          Trabajamos con <span className="font-semibold text-slate-900">gobiernos regionales, empresas privadas, centros de investigación y comunidades</span> para construir soluciones sostenibles que respeten las identidades locales y promuevan el desarrollo equilibrado de los territorios.
+                          Trabajamos con <span className="font-semibold text-slate-900">gobiernos regionales, empresas privadas y centros de investigación</span> para construir soluciones sostenibles que respeten las identidades locales.
                         </p>
                       </div>
                     </div>
@@ -363,7 +357,7 @@
                       <img 
                         src={images.valparaiso}
                         alt="Valparaíso" 
-                        className="w-full h-[400px] object-cover"
+                        className="w-full h-[300px] object-cover"
                       />
                       <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4">
                         <span className="text-white text-xs font-mono tracking-widest">Valparaíso · Patrimonio y comunidad</span>
@@ -373,71 +367,73 @@
                 </div>
               </section>
 
-              <section id="areas" className="py-20 border-b border-slate-200 bg-white">
+              {/* ===== 3. ÁREAS (scroll) ===== */}
+              <section id="areas" className="py-12 border-b border-slate-200 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-12 border-b border-slate-200 pb-6">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">02 / Áreas de Especialización</span>
+                  <div className="mb-8 border-b border-slate-200 pb-4">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">02 / Áreas de Especialización</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900">Nuestros pilares de trabajo</h2>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="p-8 border border-slate-200 bg-[#FAF9F6] space-y-4 hover:border-red-300 transition">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="p-6 border border-slate-200 bg-[#FAF9F6] space-y-3 hover:border-red-300 transition">
                       <Compass />
-                      <h3 className="font-title text-xl font-semibold text-slate-900">Inteligencia Territorial</h3>
+                      <h3 className="font-title text-lg font-semibold text-slate-900">Inteligencia Territorial</h3>
                       <p className="text-xs text-slate-600 leading-relaxed font-light">
-                        Modelación de datos geoespaciales integrados con variables socio-demográficas para toma de decisiones complejas.
+                        Modelación de datos geoespaciales integrados con variables socio-demográficas.
                       </p>
                     </div>
 
-                    <div className="p-8 border border-slate-200 bg-[#FAF9F6] space-y-4 hover:border-red-300 transition">
+                    <div className="p-6 border border-slate-200 bg-[#FAF9F6] space-y-3 hover:border-red-300 transition">
                       <MapPin />
-                      <h3 className="font-title text-xl font-semibold text-slate-900">Ordenamiento & PROT</h3>
+                      <h3 className="font-title text-lg font-semibold text-slate-900">Ordenamiento & PROT</h3>
                       <p className="text-xs text-slate-600 leading-relaxed font-light">
-                        Asesoría en Planes Regionales de Ordenamiento Territorial y gestión de cuencas o zonas de conflicto socioambiental.
+                        Asesoría en Planes Regionales de Ordenamiento Territorial y gestión de cuencas.
                       </p>
                     </div>
 
-                    <div className="p-8 border border-slate-200 bg-[#FAF9F6] space-y-4 hover:border-red-300 transition">
+                    <div className="p-6 border border-slate-200 bg-[#FAF9F6] space-y-3 hover:border-red-300 transition">
                       <User />
-                      <h3 className="font-title text-xl font-semibold text-slate-900">Etnografía & Comunidades</h3>
+                      <h3 className="font-title text-lg font-semibold text-slate-900">Etnografía & Comunidades</h3>
                       <p className="text-xs text-slate-600 leading-relaxed font-light">
-                        Trabajo de campo en profundidad para evaluación de impacto social, asentamientos y relacionamiento territorial.
+                        Trabajo de campo para evaluación de impacto social y relacionamiento territorial.
                       </p>
                     </div>
 
-                    <div className="p-8 border border-slate-200 bg-[#FAF9F6] space-y-4 hover:border-red-300 transition">
+                    <div className="p-6 border border-slate-200 bg-[#FAF9F6] space-y-3 hover:border-red-300 transition">
                       <BarChart />
-                      <h3 className="font-title text-xl font-semibold text-slate-900">Policy Papers & Evidencia</h3>
+                      <h3 className="font-title text-lg font-semibold text-slate-900">Policy Papers & Evidencia</h3>
                       <p className="text-xs text-slate-600 leading-relaxed font-light">
-                        Elaboración de informes de políticas públicas, minutas técnicas fundadas para organismos y centros de investigación.
+                        Informes de políticas públicas y minutas técnicas fundadas.
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-12 relative overflow-hidden rounded-sm">
+                  <div className="mt-8 relative overflow-hidden rounded-sm">
                     <img 
                       src={images.santiago}
                       alt="Santiago" 
-                      className="w-full h-[300px] object-cover"
+                      className="w-full h-[200px] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-slate-900/60 to-transparent flex items-center">
-                      <div className="p-8 text-white max-w-lg">
-                        <span className="text-xs font-mono tracking-widest bg-red-800 px-3 py-1 inline-block mb-3">Santiago</span>
-                        <h3 className="font-title text-2xl font-medium">Políticas públicas con enfoque territorial</h3>
+                      <div className="p-6 text-white">
+                        <span className="text-xs font-mono tracking-widest bg-red-800 px-3 py-1 inline-block mb-2">Santiago</span>
+                        <h3 className="font-title text-xl font-medium">Políticas públicas con enfoque territorial</h3>
                       </div>
                     </div>
                   </div>
                 </div>
               </section>
 
-              <section id="servicios" className="py-20 border-b border-slate-200 bg-[#FAF9F6]">
+              {/* ===== 4. SERVICIOS (fuera del scroll) ===== */}
+              <section id="servicios" className="py-12 border-b border-slate-200 bg-[#FAF9F6] scroll-mt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-12 border-b border-slate-200 pb-6">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">03 / Servicios</span>
+                  <div className="mb-8 border-b border-slate-200 pb-4">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">03 / Servicios</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900">Soluciones concretas para territorios complejos</h2>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {[
                       { title: "Diagnóstico Socioespacial", desc: "Análisis integral de territorios con enfoque antropológico y geoespacial" },
                       { title: "Evaluación de Impacto Territorial", desc: "Medición de huella social y ambiental de proyectos" },
@@ -446,79 +442,81 @@
                       { title: "Asesoría en Políticas Públicas", desc: "Minutas técnicas y recomendaciones para organismos públicos" },
                       { title: "Capacitación y Transferencia", desc: "Formación en metodologías de inteligencia territorial" }
                     ].map((service, index) => (
-                      <div key={index} className="p-6 border border-slate-200 bg-white hover:shadow-lg hover:border-red-300 transition">
-                        <h3 className="font-title text-lg font-semibold text-slate-900">{service.title}</h3>
-                        <p className="text-xs text-slate-600 font-light mt-2 leading-relaxed">{service.desc}</p>
+                      <div key={index} className="p-4 border border-slate-200 bg-white hover:shadow-lg hover:border-red-300 transition">
+                        <h3 className="font-title text-base font-semibold text-slate-900">{service.title}</h3>
+                        <p className="text-xs text-slate-600 font-light mt-1 leading-relaxed">{service.desc}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               </section>
 
-              <section id="experiencia" className="py-20 border-b border-slate-200 bg-white">
+              {/* ===== 5. EXPERIENCIA (fuera del scroll) ===== */}
+              <section id="experiencia" className="py-12 border-b border-slate-200 bg-white scroll-mt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-12 border-b border-slate-200 pb-6">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">04 / Experiencia</span>
-                    <h2 className="font-title text-3xl font-medium text-slate-900">Proyectos y experiencia seleccionada</h2>
+                  <div className="mb-8 border-b border-slate-200 pb-4">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">04 / Experiencia</span>
+                    <h2 className="font-title text-3xl font-medium text-slate-900">Proyectos seleccionados</h2>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {[
-                      { title: "Diagnóstico Socioespacial", client: "Gobierno Regional / Minvu", location: "Región de Valparaíso", desc: "12 municipios evaluados • 450+ entrevistas" },
-                      { title: "Modelo de Inteligencia Territorial", client: "Sector Minero & Energético", location: "Región de Antofagasta", desc: "Reducción de conflictos socioambientales" },
-                      { title: "Estudio de Poblamiento Informal", client: "Centro de Estudios Urbanos / Fondecyt", location: "Gran Santiago", desc: "3 publicaciones indexadas" },
-                      { title: "Plan de Ordenamiento Territorial", client: "Minvu", location: "Región de Coquimbo", desc: "Zonas de riesgo hídrico evaluadas" },
-                      { title: "Evaluación de Impacto Social", client: "Empresa Privada", location: "Región de Tarapacá", desc: "Relacionamiento comunitario" },
-                      { title: "Estudio Etnográfico", client: "Centro de Estudios", location: "Región de Arica", desc: "Patrimonio y desarrollo" }
+                      { title: "Diagnóstico Socioespacial", client: "Gobierno Regional", location: "Valparaíso", desc: "12 municipios • 450+ entrevistas" },
+                      { title: "Inteligencia Territorial", client: "Sector Minero", location: "Antofagasta", desc: "Reducción de conflictos socioambientales" },
+                      { title: "Estudio de Poblamiento Informal", client: "Centro de Estudios", location: "Santiago", desc: "3 publicaciones indexadas" },
+                      { title: "Plan de Ordenamiento Territorial", client: "Minvu", location: "Coquimbo", desc: "Zonas de riesgo hídrico evaluadas" },
+                      { title: "Evaluación de Impacto Social", client: "Empresa Privada", location: "Tarapacá", desc: "Relacionamiento comunitario" },
+                      { title: "Estudio Etnográfico", client: "Centro de Estudios", location: "Arica", desc: "Patrimonio y desarrollo" }
                     ].map((project, index) => (
-                      <div key={index} className="border border-slate-200 bg-[#FAF9F6] p-6 flex flex-col hover:border-red-300 transition">
-                        <div className="text-xs font-mono text-slate-500 mb-2">{project.client}</div>
-                        <h3 className="font-title text-lg font-semibold text-slate-900 leading-snug">{project.title}</h3>
-                        <p className="text-xs text-slate-600 font-light mt-2 leading-relaxed flex-1">{project.desc}</p>
-                        <div className="mt-4 pt-3 border-t border-slate-200 text-[10px] font-mono text-slate-500">
+                      <div key={index} className="border border-slate-200 bg-[#FAF9F6] p-4 flex flex-col hover:border-red-300 transition">
+                        <div className="text-[10px] font-mono text-slate-500 mb-1">{project.client}</div>
+                        <h3 className="font-title text-base font-semibold text-slate-900 leading-snug">{project.title}</h3>
+                        <p className="text-xs text-slate-600 font-light mt-1 flex-1">{project.desc}</p>
+                        <div className="mt-2 pt-2 border-t border-slate-200 text-[10px] font-mono text-slate-500">
                           {project.location}
                         </div>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-12 relative overflow-hidden rounded-sm">
+                  <div className="mt-8 relative overflow-hidden rounded-sm">
                     <img 
                       src={images.rio}
                       alt="Río Biobío" 
-                      className="w-full h-[300px] object-cover"
+                      className="w-full h-[200px] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-l from-slate-900/60 to-transparent flex items-center justify-end">
-                      <div className="p-8 text-white max-w-lg text-right">
-                        <span className="text-xs font-mono tracking-widest bg-red-800 px-3 py-1 inline-block mb-3">Sur de Chile</span>
-                        <h3 className="font-title text-2xl font-medium">Río Biobío · Territorio y comunidades</h3>
+                      <div className="p-6 text-white text-right">
+                        <span className="text-xs font-mono tracking-widest bg-red-800 px-3 py-1 inline-block mb-2">Sur de Chile</span>
+                        <h3 className="font-title text-xl font-medium">Río Biobío · Territorio y comunidades</h3>
                       </div>
                     </div>
                   </div>
                 </div>
               </section>
 
-              <section id="publicaciones" className="py-20 border-b border-slate-200 bg-[#FAF9F6]">
+              {/* ===== 6. PUBLICACIONES (fuera del scroll) ===== */}
+              <section id="publicaciones" className="py-12 border-b border-slate-200 bg-[#FAF9F6] scroll-mt-20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-12 border-b border-slate-200 pb-6">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">05 / Publicaciones</span>
+                  <div className="mb-8 border-b border-slate-200 pb-4">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">05 / Publicaciones</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900">Producción académica y técnica</h2>
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="space-y-4">
                     {[
-                      { year: "2024", title: "Territorio, cultura y desarrollo: una mirada antropológica", authors: "[Nombre], [Nombre]", journal: "Revista Chilena de Antropología" },
-                      { year: "2023", title: "Inteligencia Territorial para la gestión de conflictos socioambientales", authors: "[Nombre], [Nombre]", journal: "Editorial Universitaria" },
+                      { year: "2024", title: "Territorio, cultura y desarrollo", authors: "[Nombre], [Nombre]", journal: "Revista Chilena de Antropología" },
+                      { year: "2023", title: "Inteligencia Territorial para conflictos socioambientales", authors: "[Nombre], [Nombre]", journal: "Editorial Universitaria" },
                       { year: "2023", title: "Metodologías participativas para el ordenamiento territorial", authors: "[Nombre], [Nombre]", journal: "Papers Fondecyt" },
                       { year: "2022", title: "Geodatos y etnografía: herramientas para la planificación", authors: "[Nombre], [Nombre]", journal: "Revista de Geografía" },
                       { year: "2021", title: "Políticas públicas con enfoque territorial", authors: "[Nombre], [Nombre]", journal: "Serie Policy Papers" }
                     ].map((pub, index) => (
-                      <div key={index} className="border border-slate-200 bg-white p-6 hover:shadow-md hover:border-red-300 transition">
-                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                          <div className="flex-1">
+                      <div key={index} className="border border-slate-200 bg-white p-4 hover:shadow-md hover:border-red-300 transition">
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                          <div>
                             <span className="text-[10px] font-mono text-red-700 uppercase tracking-wider">{pub.year}</span>
-                            <h3 className="font-title text-lg font-semibold text-slate-900 mt-1">{pub.title}</h3>
-                            <p className="text-xs text-slate-500 mt-1 font-light">{pub.authors} • {pub.journal}</p>
+                            <h3 className="font-title text-base font-semibold text-slate-900 mt-0.5">{pub.title}</h3>
+                            <p className="text-xs text-slate-500 mt-0.5 font-light">{pub.authors} • {pub.journal}</p>
                           </div>
                           <a href="#" className="text-[10px] font-mono text-red-700 underline hover:text-red-900 whitespace-nowrap">
                             Ver más →
@@ -530,14 +528,15 @@
                 </div>
               </section>
 
-              <section id="profesionales" className="py-20 border-b border-slate-200 bg-white">
+              {/* ===== 7. PROFESIONALES (scroll) ===== */}
+              <section id="profesionales" className="py-12 border-b border-slate-200 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-12 border-b border-slate-200 pb-6">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">06 / Profesionales</span>
+                  <div className="mb-8 border-b border-slate-200 pb-4">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">06 / Profesionales</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900">Nuestro equipo</h2>
                   </div>
 
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
                       { name: "[Nombre Apellido]", role: "Director", specialty: "Antropólogo, PhD en Estudios Territoriales" },
                       { name: "[Nombre Apellido]", role: "Consultora Senior", specialty: "Geógrafa, especialista en SIG" },
@@ -563,9 +562,10 @@
                 </div>
               </section>
 
-              <section id="contacto" className="py-20 bg-[#FAF9F6] border-b border-slate-200">
+              {/* ===== 8. CONTACTO (scroll) ===== */}
+              <section id="contacto" className="py-12 bg-[#FAF9F6] border-b border-slate-200">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6">
-                  <div className="text-center mb-12">
+                  <div className="text-center mb-8">
                     <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">07 / Contacto</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900">Hablemos de tu proyecto</h2>
                     <p className="text-slate-600 text-sm font-light mt-4 max-w-2xl mx-auto">
@@ -619,7 +619,7 @@
 
                   </div>
 
-                  <div className="mt-12 text-center text-xs text-slate-400 font-mono border-t border-slate-200 pt-8 max-w-md mx-auto">
+                  <div className="mt-8 text-center text-xs text-slate-400 font-mono border-t border-slate-200 pt-6 max-w-md mx-auto">
                     <p>Respuesta en <span className="text-red-800 font-semibold">menos de 24 horas</span></p>
                     <p className="mt-1">Disponible para despliegue nacional en Chile</p>
                   </div>

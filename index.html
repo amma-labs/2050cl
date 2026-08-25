@@ -143,17 +143,16 @@
       function App() {
         const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
         const [activeSection, setActiveSection] = useState('inicio');
-        const [hiddenSections] = useState(['servicios', 'experiencia', 'publicaciones']);
 
         const navItems = [
-          { id: 'inicio', label: 'Inicio' },
-          { id: 'quienes-somos', label: 'Quiénes Somos' },
-          { id: 'areas', label: 'Áreas' },
-          { id: 'servicios', label: 'Servicios' },
-          { id: 'experiencia', label: 'Experiencia' },
-          { id: 'publicaciones', label: 'Publicaciones' },
-          { id: 'profesionales', label: 'Profesionales' },
-          { id: 'contacto', label: 'Contacto' }
+          { id: 'inicio', label: 'Inicio', link: 'index.html#inicio' },
+          { id: 'quienes-somos', label: 'Quiénes Somos', link: 'index.html#quienes-somos' },
+          { id: 'areas', label: 'Áreas', link: 'index.html#areas' },
+          { id: 'servicios', label: 'Servicios', link: 'servicios.html' },
+          { id: 'experiencia', label: 'Experiencia', link: 'servicios.html#experiencia' },
+          { id: 'publicaciones', label: 'Publicaciones', link: 'servicios.html#publicaciones' },
+          { id: 'profesionales', label: 'Profesionales', link: 'index.html#profesionales' },
+          { id: 'contacto', label: 'Contacto', link: 'index.html#contacto' }
         ];
 
         useEffect(() => {
@@ -161,7 +160,9 @@
             const scrollPosition = window.scrollY + 120;
             let current = 'inicio';
             
-            const visibleItems = navItems.filter(item => !hiddenSections.includes(item.id));
+            const visibleItems = navItems.filter(item => 
+              !['servicios', 'experiencia', 'publicaciones'].includes(item.id)
+            );
             visibleItems.forEach(item => {
               const element = document.getElementById(item.id);
               if (element) {
@@ -177,7 +178,7 @@
 
           window.addEventListener('scroll', handleScroll);
           return () => window.removeEventListener('scroll', handleScroll);
-        }, [hiddenSections, navItems]);
+        }, []);
 
         const scrollToSection = (sectionId) => {
           setMobileMenuOpen(false);
@@ -187,8 +188,6 @@
           }
         };
 
-        const isHiddenSection = (sectionId) => hiddenSections.includes(sectionId);
-
         return (
           <div className="min-h-screen bg-[#FAF9F6] text-slate-900">
             
@@ -196,7 +195,7 @@
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="h-20 flex items-center justify-between">
                   
-                  <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('inicio')}>
+                  <a href="index.html#inicio" className="flex items-center gap-3 cursor-pointer">
                     <img 
                       src="assets/favicon.svg" 
                       alt="Desarrollo Sostenible" 
@@ -210,27 +209,26 @@
                         & Territorio
                       </span>
                     </div>
-                  </div>
+                  </a>
 
                   <nav className="hidden lg:flex items-center gap-6 text-xs font-medium tracking-wide text-slate-600 uppercase">
                     {navItems.map(item => (
-                      <button
+                      <a
                         key={item.id}
-                        onClick={() => scrollToSection(item.id)}
+                        href={item.link}
                         className={`hover:text-slate-900 transition pb-0.5 ${
                           activeSection === item.id ? 'text-slate-900 border-b-2 border-red-800 font-semibold' : ''
                         }`}
                       >
                         {item.label}
-                      </button>
+                      </a>
                     ))}
                   </nav>
 
                   <div className="flex items-center gap-3">
                     <a 
-                      href="#contacto" 
+                      href="index.html#contacto" 
                       className="px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-[10px] uppercase tracking-wider font-semibold rounded-none transition"
-                      onClick={(e) => { e.preventDefault(); scrollToSection('contacto'); }}
                     >
                       Contactar
                     </a>
@@ -247,20 +245,19 @@
                   <div className="lg:hidden py-4 border-t border-slate-200 bg-[#FAF9F6]">
                     <div className="flex flex-col gap-2">
                       {navItems.map(item => (
-                        <button
+                        <a
                           key={item.id}
-                          onClick={() => scrollToSection(item.id)}
+                          href={item.link}
                           className={`text-left px-3 py-2 text-xs font-medium uppercase tracking-wider hover:bg-slate-100 transition ${
                             activeSection === item.id ? 'text-slate-900 bg-slate-100 font-semibold' : 'text-slate-600'
                           }`}
                         >
                           {item.label}
-                        </button>
+                        </a>
                       ))}
                       <a 
-                        href="#contacto" 
+                        href="index.html#contacto" 
                         className="mt-2 px-4 py-3 bg-red-800 text-white text-center text-xs uppercase tracking-wider font-semibold"
-                        onClick={(e) => { e.preventDefault(); scrollToSection('contacto'); }}
                       >
                         Contactar
                       </a>
@@ -272,7 +269,7 @@
 
             <main className="pt-20">
               
-              {/* ===== 1. INICIO (scroll) ===== */}
+              {/* ===== 1. INICIO ===== */}
               <section id="inicio" className="relative border-b border-slate-200 py-12 lg:py-16 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
                   <div className="lg:col-span-7 space-y-6">
@@ -285,7 +282,7 @@
                     </p>
 
                     <div className="flex flex-wrap gap-4 pt-2">
-                      <a href="#contacto" className="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition flex items-center gap-2 shadow-sm">
+                      <a href="index.html#contacto" className="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition flex items-center gap-2 shadow-sm">
                         Solicitar Diagnóstico <ArrowRight />
                       </a>
                       <a href="servicios.html#experiencia" className="px-6 py-3.5 bg-slate-100 text-slate-800 border border-slate-300 text-xs uppercase tracking-widest font-semibold hover:bg-slate-200 transition">
@@ -335,7 +332,7 @@
                 </div>
               </section>
 
-              {/* ===== 2. QUIÉNES SOMOS (scroll) ===== */}
+              {/* ===== 2. QUIÉNES SOMOS ===== */}
               <section id="quienes-somos" className="py-12 border-b border-slate-200 bg-[#FAF9F6]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -367,7 +364,7 @@
                 </div>
               </section>
 
-              {/* ===== 3. ÁREAS (scroll) ===== */}
+              {/* ===== 3. ÁREAS ===== */}
               <section id="areas" className="py-12 border-b border-slate-200 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="mb-8 border-b border-slate-200 pb-4">
@@ -425,114 +422,11 @@
                 </div>
               </section>
 
-              {/* ===== 4. SERVICIOS (fuera del scroll) ===== */}
-              <section id="servicios" className="py-12 border-b border-slate-200 bg-[#FAF9F6] scroll-mt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-8 border-b border-slate-200 pb-4">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">03 / Servicios</span>
-                    <h2 className="font-title text-3xl font-medium text-slate-900">Soluciones concretas para territorios complejos</h2>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {[
-                      { title: "Diagnóstico Socioespacial", desc: "Análisis integral de territorios con enfoque antropológico y geoespacial" },
-                      { title: "Evaluación de Impacto Territorial", desc: "Medición de huella social y ambiental de proyectos" },
-                      { title: "Planificación Territorial Participativa", desc: "Procesos colaborativos con comunidades y actores locales" },
-                      { title: "Modelamiento Geoespacial Cualitativo", desc: "Cruce de datos cuantitativos y cualitativos" },
-                      { title: "Asesoría en Políticas Públicas", desc: "Minutas técnicas y recomendaciones para organismos públicos" },
-                      { title: "Capacitación y Transferencia", desc: "Formación en metodologías de inteligencia territorial" }
-                    ].map((service, index) => (
-                      <div key={index} className="p-4 border border-slate-200 bg-white hover:shadow-lg hover:border-red-300 transition">
-                        <h3 className="font-title text-base font-semibold text-slate-900">{service.title}</h3>
-                        <p className="text-xs text-slate-600 font-light mt-1 leading-relaxed">{service.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
-
-              {/* ===== 5. EXPERIENCIA (fuera del scroll) ===== */}
-              <section id="experiencia" className="py-12 border-b border-slate-200 bg-white scroll-mt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-8 border-b border-slate-200 pb-4">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">04 / Experiencia</span>
-                    <h2 className="font-title text-3xl font-medium text-slate-900">Proyectos seleccionados</h2>
-                  </div>
-
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {[
-                      { title: "Diagnóstico Socioespacial", client: "Gobierno Regional", location: "Valparaíso", desc: "12 municipios • 450+ entrevistas" },
-                      { title: "Inteligencia Territorial", client: "Sector Minero", location: "Antofagasta", desc: "Reducción de conflictos socioambientales" },
-                      { title: "Estudio de Poblamiento Informal", client: "Centro de Estudios", location: "Santiago", desc: "3 publicaciones indexadas" },
-                      { title: "Plan de Ordenamiento Territorial", client: "Minvu", location: "Coquimbo", desc: "Zonas de riesgo hídrico evaluadas" },
-                      { title: "Evaluación de Impacto Social", client: "Empresa Privada", location: "Tarapacá", desc: "Relacionamiento comunitario" },
-                      { title: "Estudio Etnográfico", client: "Centro de Estudios", location: "Arica", desc: "Patrimonio y desarrollo" }
-                    ].map((project, index) => (
-                      <div key={index} className="border border-slate-200 bg-[#FAF9F6] p-4 flex flex-col hover:border-red-300 transition">
-                        <div className="text-[10px] font-mono text-slate-500 mb-1">{project.client}</div>
-                        <h3 className="font-title text-base font-semibold text-slate-900 leading-snug">{project.title}</h3>
-                        <p className="text-xs text-slate-600 font-light mt-1 flex-1">{project.desc}</p>
-                        <div className="mt-2 pt-2 border-t border-slate-200 text-[10px] font-mono text-slate-500">
-                          {project.location}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-8 relative overflow-hidden rounded-sm">
-                    <img 
-                      src={images.rio}
-                      alt="Río Biobío" 
-                      className="w-full h-[200px] object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-l from-slate-900/60 to-transparent flex items-center justify-end">
-                      <div className="p-6 text-white text-right">
-                        <span className="text-xs font-mono tracking-widest bg-red-800 px-3 py-1 inline-block mb-2">Sur de Chile</span>
-                        <h3 className="font-title text-xl font-medium">Río Biobío · Territorio y comunidades</h3>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              {/* ===== 6. PUBLICACIONES (fuera del scroll) ===== */}
-              <section id="publicaciones" className="py-12 border-b border-slate-200 bg-[#FAF9F6] scroll-mt-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-8 border-b border-slate-200 pb-4">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">05 / Publicaciones</span>
-                    <h2 className="font-title text-3xl font-medium text-slate-900">Producción académica y técnica</h2>
-                  </div>
-
-                  <div className="space-y-4">
-                    {[
-                      { year: "2024", title: "Territorio, cultura y desarrollo", authors: "[Nombre], [Nombre]", journal: "Revista Chilena de Antropología" },
-                      { year: "2023", title: "Inteligencia Territorial para conflictos socioambientales", authors: "[Nombre], [Nombre]", journal: "Editorial Universitaria" },
-                      { year: "2023", title: "Metodologías participativas para el ordenamiento territorial", authors: "[Nombre], [Nombre]", journal: "Papers Fondecyt" },
-                      { year: "2022", title: "Geodatos y etnografía: herramientas para la planificación", authors: "[Nombre], [Nombre]", journal: "Revista de Geografía" },
-                      { year: "2021", title: "Políticas públicas con enfoque territorial", authors: "[Nombre], [Nombre]", journal: "Serie Policy Papers" }
-                    ].map((pub, index) => (
-                      <div key={index} className="border border-slate-200 bg-white p-4 hover:shadow-md hover:border-red-300 transition">
-                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
-                          <div>
-                            <span className="text-[10px] font-mono text-red-700 uppercase tracking-wider">{pub.year}</span>
-                            <h3 className="font-title text-base font-semibold text-slate-900 mt-0.5">{pub.title}</h3>
-                            <p className="text-xs text-slate-500 mt-0.5 font-light">{pub.authors} • {pub.journal}</p>
-                          </div>
-                          <a href="#" className="text-[10px] font-mono text-red-700 underline hover:text-red-900 whitespace-nowrap">
-                            Ver más →
-                          </a>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
-
-              {/* ===== 7. PROFESIONALES (scroll) ===== */}
+              {/* ===== 4. PROFESIONALES ===== */}
               <section id="profesionales" className="py-12 border-b border-slate-200 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="mb-8 border-b border-slate-200 pb-4">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">06 / Profesionales</span>
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-1">03 / Profesionales</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900">Nuestro equipo</h2>
                   </div>
 
@@ -562,11 +456,11 @@
                 </div>
               </section>
 
-              {/* ===== 8. CONTACTO (scroll) ===== */}
+              {/* ===== 5. CONTACTO ===== */}
               <section id="contacto" className="py-12 bg-[#FAF9F6] border-b border-slate-200">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6">
                   <div className="text-center mb-8">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">07 / Contacto</span>
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 block mb-2">04 / Contacto</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900">Hablemos de tu proyecto</h2>
                     <p className="text-slate-600 text-sm font-light mt-4 max-w-2xl mx-auto">
                       Escríbenos por WhatsApp o correo y te responderemos a la brevedad.

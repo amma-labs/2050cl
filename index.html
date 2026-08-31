@@ -426,12 +426,12 @@
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {[
-                      { name: "Bernardo Muñoz", role: "Director", specialty: "Antropólogo · Doctor en Antropología (Universidad de Tübingen) · Especialista en etnodesarrollo, turismo sostenible y gobernanza indígena" },
-                      { name: "Joaquín Vigueras", role: "Analista", specialty: "Geodatos y modelamiento · Political Scientist · Especialista en inteligencia territorial y análisis de riesgos" },
-                      { name: "Jordi Tresserras Juan", role: "Consultor Senior", specialty: "Doctor en Geografía e Historia · Patrimonio, turismo cultural y economía creativa" },
-                      { name: "Franco Carreño", role: "Investigador", specialty: "Historiador · Becario ANID · Especialista en historia política y social latinoamericana" },
-                      { name: "Verónica Bustamante", role: "Consultora", specialty: "Magíster en Gestión del Patrimonio y Turismo Sostenible · Especialista en desarrollo local y gobernanza territorial" },
-                      { name: "Claudio Maggi", role: "Consultor", specialty: "M.Sc. Industrial Engineer · Innovación y transferencia con triple impacto · Especialista en competitividad regional" }
+                      { name: "Bernardo Muñoz", linkedin: "https://www.linkedin.com/in/bernardo-munoz-78b2b9207/", role: "Director", specialty: "Antropólogo · Doctor en Antropología (Universidad de Tübingen) · Especialista en etnodesarrollo, turismo sostenible y gobernanza indígena", linkedinUrl: "https://www.linkedin.com/in/bernardo-munoz-78b2b9207/" },
+                      { name: "Joaquín Vigueras", linkedin: "https://www.linkedin.com/in/jvig/", role: "Analista", specialty: "Geodatos y modelamiento · Political Scientist · Especialista en inteligencia territorial y análisis de riesgos", linkedinUrl: "https://www.linkedin.com/in/jvig/" },
+                      { name: "Jordi Tresserras Juan", linkedin: "https://www.linkedin.com/in/jordi-tresserras-juan-21610934/", role: "Consultor Senior", specialty: "Doctor en Geografía e Historia · Patrimonio, turismo cultural y economía creativa", linkedinUrl: "https://www.linkedin.com/in/jordi-tresserras-juan-21610934/" },
+                      { name: "Franco Carreño", linkedin: "https://www.linkedin.com/in/franco-esteban-carreno-cabero-754031260/", role: "Investigador", specialty: "Historiador · Becario ANID · Especialista en historia política y social latinoamericana", linkedinUrl: "https://www.linkedin.com/in/franco-esteban-carreno-cabero-754031260/" },
+                      { name: "Verónica Bustamante", linkedin: "https://www.linkedin.com/in/verónica-bustamante/", role: "Consultora", specialty: "Magíster en Gestión del Patrimonio y Turismo Sostenible · Especialista en desarrollo local y gobernanza territorial", linkedinUrl: "https://www.linkedin.com/in/verónica-bustamante/" },
+                      { name: "Claudio Maggi", linkedin: "https://www.linkedin.com/in/claudiomaggi/", role: "Consultor", specialty: "M.Sc. Industrial Engineer · Innovación y transferencia con triple impacto · Especialista en competitividad regional", linkedinUrl: "https://www.linkedin.com/in/claudiomaggi/" }
                     ].map((prof, index) => (
                       <div key={index} className="border border-slate-200 bg-[#FAF9F6] p-6 text-center hover:border-red-300 transition">
                         <div className="w-24 h-24 rounded-full bg-red-100 mx-auto mb-4 flex items-center justify-center text-red-800 text-2xl font-title">
@@ -441,7 +441,7 @@
                         <p className="text-xs text-red-700 font-medium mt-1">{prof.role}</p>
                         <p className="text-xs text-slate-600 font-light mt-3 leading-relaxed">{prof.specialty}</p>
                         <div className="mt-4 flex justify-center gap-3 text-slate-400">
-                          <a href="#" className="hover:text-red-800"><Linkedin /></a>
+                          <a href={prof.linkedinUrl} className="hover:text-red-800"><Linkedin /></a>
                           <a href="#" className="hover:text-red-800"><Mail /></a>
                         </div>
                       </div>

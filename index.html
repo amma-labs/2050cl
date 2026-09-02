@@ -94,7 +94,7 @@
       });
     </script>
     </head>
-<body class="bg-[#FAF9F6] dark:bg-[#0d0d0d] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-slate-800 selection:text-white">
+<body class="bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] text-slate-900 dark:text-slate-100 dark:text-slate-100 font-sans antialiased selection:bg-slate-800 selection:text-white">
 
     <div id="root"></div>
 
@@ -146,19 +146,19 @@
       );
 
       const Mail = () => (
-        <svg className="w-4 h-4 text-slate-400 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
         </svg>
       );
 
       const MapPinSmall = () => (
-        <svg className="w-4 h-4 text-slate-400 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
         </svg>
       );
 
       const Phone = () => (
-        <svg className="w-4 h-4 text-slate-400 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
         </svg>
       );
@@ -224,9 +224,9 @@
         };
 
         return (
-          <div className="min-h-screen bg-[#FAF9F6] dark:bg-[#0d0d0d] text-slate-900 dark:text-slate-100">
+          <div className="min-h-screen bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] text-slate-900 dark:text-slate-100 dark:text-slate-100">
             
-            <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6] dark:bg-[#0d0d0d]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-600">
+            <header className="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700">
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className="h-20 flex items-center justify-between">
                   
@@ -237,23 +237,22 @@
                       className="h-10 w-auto"
                     />
                     <div>
-                      <span className="font-title text-base font-semibold text-slate-900 dark:text-slate-100 tracking-tight block leading-none">
+                      <span className="font-title text-base font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100 tracking-tight block leading-none">
                         Desarrollo Sostenible
                       </span>
-                      <span className="text-[10px] font-medium text-slate-500 dark:text-slate-300 tracking-widest uppercase mt-0.5 block">
+                      <span className="text-[10px] font-medium text-slate-500 dark:text-slate-400 dark:text-slate-500 tracking-widest uppercase mt-0.5 block">
                         & Territorio
                       </span>
                     </div>
                   </a>
 
-                  <nav className="hidden lg:flex items-center gap-6 text-xs font-medium tracking-wide text-slate-600 dark:text-slate-300 uppercase">
-                    <a href="index.html#quienes-somos" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "quienes-somos" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Quiénes Somos</a>
-                    <a href="index.html#areas" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "areas" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Áreas</a>
-                    <a href="index.html#profesionales" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "profesionales" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Profesionales</a>
-                    <a href="servicios.html" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "servicios" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Servicios</a>
-                    <a href="servicios.html#experiencia" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "experiencia" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Experiencia</a>
-                    <a href="servicios.html#publicaciones" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "publicaciones" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Publicaciones</a>
-            <a href="https://2050lab.org" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
+                  <nav className="hidden lg:flex items-center gap-6 text-xs font-medium tracking-wide text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase">
+                    <a href="index.html#quienes-somos" className={`hover:text-slate-900 dark:text-slate-100 dark:text-slate-100 transition pb-0.5 ${activeSection === "quienes-somos" ? "text-slate-900 dark:text-slate-100 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Quiénes Somos</a>
+                    <a href="index.html#areas" className={`hover:text-slate-900 dark:text-slate-100 dark:text-slate-100 transition pb-0.5 ${activeSection === "areas" ? "text-slate-900 dark:text-slate-100 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Áreas</a>
+                    <a href="index.html#profesionales" className={`hover:text-slate-900 dark:text-slate-100 dark:text-slate-100 transition pb-0.5 ${activeSection === "profesionales" ? "text-slate-900 dark:text-slate-100 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Profesionales</a>
+                    <a href="servicios.html" className={`hover:text-slate-900 dark:text-slate-100 dark:text-slate-100 transition pb-0.5 ${activeSection === "servicios" ? "text-slate-900 dark:text-slate-100 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Servicios</a>
+                    <a href="servicios.html#experiencia" className={`hover:text-slate-900 dark:text-slate-100 dark:text-slate-100 transition pb-0.5 ${activeSection === "experiencia" ? "text-slate-900 dark:text-slate-100 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Experiencia</a>
+                    <a href="servicios.html#publicaciones" className={`hover:text-slate-900 dark:text-slate-100 dark:text-slate-100 transition pb-0.5 ${activeSection === "publicaciones" ? "text-slate-900 dark:text-slate-100 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Publicaciones</a>
                   </nav>
 
                   <div className="flex items-center gap-3">
@@ -265,7 +264,7 @@
                     </a>
                     <button 
                       onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                      className="lg:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition"
+                      className="lg:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 dark:bg-slate-800 rounded-md transition"
                     >
                       {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
                     </button>
@@ -273,14 +272,14 @@
                 </div>
 
                 {mobileMenuOpen && (
-                  <div className="lg:hidden py-4 border-t border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
+                  <div className="lg:hidden py-4 border-t border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a]">
                     <div className="flex flex-col gap-2">
                       {navItems.map(item => (
                         <a
                           key={item.id}
                           href={item.link}
-                          className={`text-left px-3 py-2 text-xs font-medium uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 transition ${
-                            activeSection === item.id ? 'text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 font-semibold' : 'text-slate-600 dark:text-slate-300'
+                          className={`text-left px-3 py-2 text-xs font-medium uppercase tracking-wider hover:bg-slate-100 dark:hover:bg-slate-800 dark:bg-slate-800 transition ${
+                            activeSection === item.id ? 'text-slate-900 dark:text-slate-100 dark:text-slate-100 bg-slate-100 dark:bg-slate-800 font-semibold' : 'text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500'
                           }`}
                         >
                           {item.label}
@@ -301,14 +300,14 @@
             <main className="pt-20">
               
               {/* ===== 1. INICIO ===== */}
-              <section id="inicio" className="relative border-b border-slate-200 dark:border-slate-600 py-12 lg:py-16 bg-white dark:bg-[#0d0d0d]">
+              <section id="inicio" className="relative border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 py-12 lg:py-16 bg-white dark:bg-[#1a1a1a] dark:bg-[#1a1a1a]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
                   <div className="lg:col-span-7 space-y-6">
-                    <h1 className="font-title text-4xl sm:text-5xl font-medium leading-[1.12] text-slate-900 dark:text-slate-100">
+                    <h1 className="font-title text-4xl sm:text-5xl font-medium leading-[1.12] text-slate-900 dark:text-slate-100 dark:text-slate-100">
                       Transformando datos socioespaciales en decisiones estratégicas de territorio.
                     </h1>
 
-                    <p className="text-slate-600 dark:text-slate-300 text-lg font-light leading-relaxed max-w-2xl">
+                    <p className="text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 text-lg font-light leading-relaxed max-w-2xl">
                       Cruce interdisciplinario de antropología avanzada, etnografía profunda y análisis geoespacial (GIS/Geodatos) para la gestión pública, industrial y ambiental.
                     </p>
 
@@ -316,14 +315,14 @@
                       <a href="index.html#contacto" className="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition flex items-center gap-2 shadow-sm dark:shadow-black/20">
                         Solicitar Diagnóstico <ArrowRight />
                       </a>
-                      <a href="servicios.html#experiencia" className="px-6 py-3.5 bg-slate-100 dark:bg-slate-800 text-white border border-slate-300 dark:border-slate-600 text-xs uppercase tracking-widest font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                      <a href="servicios.html#experiencia" className="px-6 py-3.5 bg-slate-100 dark:bg-slate-800 text-slate-800 border border-slate-300 dark:border-slate-700 text-xs uppercase tracking-widest font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">
                         Ver Casos de Estudio
                       </a>
                     </div>
                   </div>
 
                   <div className="lg:col-span-5 space-y-4">
-                    <div className="bg-slate-900 dark:bg-black text-white p-2 border border-slate-800 relative shadow-lg dark:shadow-black/40 group overflow-hidden">
+                    <div className="bg-slate-900 dark:bg-black dark:bg-black text-white p-2 border border-slate-800 relative shadow-lg dark:shadow-black/40 group overflow-hidden">
                       <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-800">
                         <img 
                           src={images.norte}
@@ -345,18 +344,18 @@
                       </div>
                     </div>
 
-                    <div className="bg-[#FAF9F6] dark:bg-[#0d0d0d] p-4 border border-slate-200 dark:border-slate-600 grid grid-cols-3 gap-2 text-center">
+                    <div className="bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] p-4 border border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 grid grid-cols-3 gap-2 text-center">
                       <div>
-                        <div className="font-title text-xl font-bold text-slate-900 dark:text-slate-100">15+</div>
-                        <div className="text-[9px] text-slate-500 dark:text-slate-300 uppercase tracking-wider">Años Exp.</div>
+                        <div className="font-title text-xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">15+</div>
+                        <div className="text-[9px] text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-wider">Años Exp.</div>
                       </div>
                       <div>
-                        <div className="font-title text-xl font-bold text-slate-900 dark:text-slate-100">40+</div>
-                        <div className="text-[9px] text-slate-500 dark:text-slate-300 uppercase tracking-wider">Proyectos</div>
+                        <div className="font-title text-xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">40+</div>
+                        <div className="text-[9px] text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-wider">Proyectos</div>
                       </div>
                       <div>
-                        <div className="font-title text-xl font-bold text-slate-900 dark:text-slate-100">12</div>
-                        <div className="text-[9px] text-slate-500 dark:text-slate-300 uppercase tracking-wider">Regiones</div>
+                        <div className="font-title text-xl font-bold text-slate-900 dark:text-slate-100 dark:text-slate-100">12</div>
+                        <div className="text-[9px] text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-wider">Regiones</div>
                       </div>
                     </div>
                   </div>
@@ -364,20 +363,20 @@
               </section>
 
               {/* ===== 2. QUIÉNES SOMOS ===== */}
-              <section id="quienes-somos" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
+              <section id="quienes-somos" className="py-12 border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-4">
-                      <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300">01 / Quiénes Somos</span>
-                      <h2 className="font-title text-3xl sm:text-4xl font-medium text-slate-900 dark:text-slate-100">
+                      <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-400 dark:text-slate-500">01 / Quiénes Somos</span>
+                      <h2 className="font-title text-3xl sm:text-4xl font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">
                         Antropología y territorio: nuestro sello
                       </h2>
-                      <div className="space-y-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-light">
+                      <div className="space-y-3 text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 text-sm leading-relaxed font-light">
                         <p>
-                          Somos una consultora especializada en <span className="font-semibold text-slate-900 dark:text-slate-100">Inteligencia Territorial</span>, donde la antropología se encuentra con los geodatos para entender la complejidad de los territorios.
+                          Somos una consultora especializada en <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">Inteligencia Territorial</span>, donde la antropología se encuentra con los geodatos para entender la complejidad de los territorios.
                         </p>
                         <p>
-                          Trabajamos con <span className="font-semibold text-slate-900 dark:text-slate-100">gobiernos regionales, empresas privadas y centros de investigación</span> para construir soluciones sostenibles que respeten las identidades locales.
+                          Trabajamos con <span className="font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">gobiernos regionales, empresas privadas y centros de investigación</span> para construir soluciones sostenibles que respeten las identidades locales.
                         </p>
                       </div>
                     </div>
@@ -396,42 +395,42 @@
               </section>
 
               {/* ===== 3. ÁREAS ===== */}
-              <section id="areas" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
+              <section id="areas" className="py-12 border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-white dark:bg-[#1a1a1a] dark:bg-[#1a1a1a]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">02 / Áreas de Especialización</span>
-                    <h2 className="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Nuestros pilares de trabajo</h2>
+                  <div className="mb-8 border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 pb-4">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-400 dark:text-slate-500 block mb-1">02 / Áreas de Especialización</span>
+                    <h2 className="font-title text-3xl font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">Nuestros pilares de trabajo</h2>
                   </div>
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] space-y-3 hover:border-red-300 transition">
                       <Compass />
-                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Inteligencia Territorial</h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">Inteligencia Territorial</h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 leading-relaxed font-light">
                         Modelación de datos geoespaciales integrados con variables socio-demográficas.
                       </p>
                     </div>
 
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] space-y-3 hover:border-red-300 transition">
                       <MapPin />
-                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Ordenamiento & PROT</h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">Ordenamiento & PROT</h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 leading-relaxed font-light">
                         Asesoría en Planes Regionales de Ordenamiento Territorial y gestión de cuencas.
                       </p>
                     </div>
 
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] space-y-3 hover:border-red-300 transition">
                       <User />
-                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Etnografía & Comunidades</h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">Etnografía & Comunidades</h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 leading-relaxed font-light">
                         Trabajo de campo para evaluación de impacto social y relacionamiento territorial.
                       </p>
                     </div>
 
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] space-y-3 hover:border-red-300 transition">
                       <BarChart />
-                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Policy Papers & Evidencia</h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">Policy Papers & Evidencia</h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 leading-relaxed font-light">
                         Informes de políticas públicas y minutas técnicas fundadas.
                       </p>
                     </div>
@@ -454,11 +453,11 @@
               </section>
 
               {/* ===== 4. PROFESIONALES ===== */}
-              <section id="profesionales" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
+              <section id="profesionales" className="py-12 border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-white dark:bg-[#1a1a1a] dark:bg-[#1a1a1a]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                  <div className="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">03 / Profesionales</span>
-                    <h2 className="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Nuestro equipo</h2>
+                  <div className="mb-8 border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 pb-4">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-400 dark:text-slate-500 block mb-1">03 / Profesionales</span>
+                    <h2 className="font-title text-3xl font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">Nuestro equipo</h2>
                   </div>
 
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -470,14 +469,14 @@
                       { name: "Verónica Bustamante", linkedin: "https://www.linkedin.com/in/verónica-bustamante/", role: "Consultora", specialty: "Magíster en Gestión del Patrimonio y Turismo Sostenible · Especialista en desarrollo local y gobernanza territorial", linkedinUrl: "https://www.linkedin.com/in/verónica-bustamante/" },
                       { name: "Claudio Maggi", linkedin: "https://www.linkedin.com/in/claudiomaggi/", role: "Consultor", specialty: "M.Sc. Industrial Engineer · Innovación y transferencia con triple impacto · Especialista en competitividad regional", linkedinUrl: "https://www.linkedin.com/in/claudiomaggi/" }
                     ].map((prof, index) => (
-                      <div key={index} className="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition">
+                      <div key={index} className="border border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] p-6 text-center hover:border-red-300 transition">
                         <div className="w-24 h-24 rounded-full bg-red-100 dark:bg-red-900/30 mx-auto mb-4 flex items-center justify-center text-red-800 text-2xl font-title">
                           {String.fromCharCode(65 + index)}
                         </div>
-                        <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">{prof.name}</h3>
+                        <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100">{prof.name}</h3>
                         <p className="text-xs text-red-700 font-medium mt-1">{prof.role}</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">{prof.specialty}</p>
-                        <div className="mt-4 flex justify-center gap-3 text-slate-400 dark:text-slate-300">
+                        <p className="text-xs text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 font-light mt-3 leading-relaxed">{prof.specialty}</p>
+                        <div className="mt-4 flex justify-center gap-3 text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500">
                           <a href={prof.linkedinUrl} className="hover:text-red-800"><Linkedin /></a>
                           <a href="#" className="hover:text-red-800"><Mail /></a>
                         </div>
@@ -488,12 +487,12 @@
               </section>
 
               {/* ===== 5. CONTACTO ===== */}
-              <section id="contacto" className="py-12 bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-600">
+              <section id="contacto" className="py-12 bg-[#FAF9F6] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] border-b border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6">
                   <div className="text-center mb-8">
-                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-2">04 / Contacto</span>
-                    <h2 className="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Hablemos de tu proyecto</h2>
-                    <p className="text-slate-600 dark:text-slate-300 text-sm font-light mt-4 max-w-2xl mx-auto">
+                    <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-400 dark:text-slate-500 block mb-2">04 / Contacto</span>
+                    <h2 className="font-title text-3xl font-medium text-slate-900 dark:text-slate-100 dark:text-slate-100">Hablemos de tu proyecto</h2>
+                    <p className="text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 text-sm font-light mt-4 max-w-2xl mx-auto">
                       Escríbenos por WhatsApp o correo y te responderemos a la brevedad.
                     </p>
                   </div>
@@ -504,17 +503,17 @@
                       href="https://wa.me/56936772028?text=Hola%202050%20Desarrollo%20Sostenible%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20sus%20servicios."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group bg-white dark:bg-[#0d0d0d] border-2 border-red-800 hover:bg-red-800 p-8 text-center transition-all duration-300 shadow-sm dark:shadow-black/20 hover:shadow-xl"
+                      className="group bg-white dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] border-2 border-red-800 hover:bg-red-800 p-8 text-center transition-all duration-300 shadow-sm dark:shadow-black/20 hover:shadow-xl"
                     >
                       <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-700 transition">
                         <svg className="w-8 h-8 text-red-800 group-hover:text-white transition" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
                       </div>
-                      <h3 className="font-title text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-white transition">
+                      <h3 className="font-title text-xl font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100 group-hover:text-white transition">
                         WhatsApp
                       </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 group-hover:text-red-100 transition mt-2">
+                      <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-500 group-hover:text-red-100 transition mt-2">
                         +56 9 3677 2028
                       </p>
                       <p className="text-xs text-red-700 group-hover:text-white font-medium mt-3">
@@ -523,28 +522,28 @@
                     </a>
 
                     <a 
-                      href="mailto:bmunoz@2050lab.cl?subject=Consulta%20sobre%20Inteligencia%20Territorial&body=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre..."
-                      className="group bg-white dark:bg-[#0d0d0d] border-2 border-slate-300 dark:border-slate-600 hover:border-red-800 p-8 text-center transition-all duration-300 shadow-sm dark:shadow-black/20 hover:shadow-xl"
+                      href="mailto:bmunoz@2050lab.org?subject=Consulta%20sobre%20Inteligencia%20Territorial&body=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre..."
+                      className="group bg-white dark:bg-[#1a1a1a] dark:bg-[#1a1a1a] border-2 border-slate-300 dark:border-slate-700 hover:border-red-800 p-8 text-center transition-all duration-300 shadow-sm dark:shadow-black/20 hover:shadow-xl"
                     >
-                      <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-100 transition">
-                        <svg className="w-8 h-8 text-slate-600 dark:text-slate-300 group-hover:text-red-800 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-100 dark:bg-red-900/30 transition">
+                        <svg className="w-8 h-8 text-slate-600 dark:text-slate-400 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 group-hover:text-red-800 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                       </div>
-                      <h3 className="font-title text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-red-800 transition">
+                      <h3 className="font-title text-xl font-semibold text-slate-900 dark:text-slate-100 dark:text-slate-100 group-hover:text-red-800 transition">
                         Correo Electrónico
                       </h3>
-                      <p className="text-sm text-slate-500 dark:text-slate-300 group-hover:text-red-800 transition mt-2">
-                        bmunoz@2050lab.cl
+                      <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-500 group-hover:text-red-800 transition mt-2">
+                        bmunoz@2050lab.org
                       </p>
-                      <p className="text-xs text-slate-400 dark:text-slate-300 group-hover:text-red-800 font-medium mt-3">
+                      <p className="text-xs text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 group-hover:text-red-800 font-medium mt-3">
                         Escríbenos directamente →
                       </p>
                     </a>
 
                   </div>
 
-                  <div className="mt-8 text-center text-xs text-slate-400 dark:text-slate-300 font-mono border-t border-slate-200 dark:border-slate-600 pt-6 max-w-md mx-auto">
+                  <div className="mt-8 text-center text-xs text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 font-mono border-t border-slate-200 dark:border-slate-700 dark:border-slate-700 dark:border-slate-700 pt-6 max-w-md mx-auto">
                     <p>Respuesta en <span className="text-red-800 font-semibold">menos de 24 horas</span></p>
                     <p className="mt-1">Disponible para despliegue nacional en Chile</p>
                   </div>
@@ -552,10 +551,10 @@
               </section>
             </main>
 
-            <footer className="py-8 bg-slate-900 dark:bg-black text-center text-xs text-slate-400 dark:text-slate-300 font-mono">
+            <footer className="py-8 bg-slate-900 dark:bg-black dark:bg-black text-center text-xs text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 dark:text-slate-500 dark:text-slate-400 dark:text-slate-500 font-mono">
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <p>© {new Date().getFullYear()} Desarrollo Sostenible & Territorio · Santiago, Chile</p>
-                <p className="text-[10px] text-slate-500 dark:text-slate-300 mt-2">
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-2">
                   <a href="#" className="hover:text-slate-300">Política de Privacidad</a> · 
                   <a href="#" className="hover:text-slate-300 ml-2">Términos y Condiciones</a>
                 </p>

@@ -11,6 +11,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- AOS (Animate On Scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            AOS.init({ duration: 800, once: true });
+        });
+    </script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -34,6 +43,7 @@
     </style>
 
     <script>
+      // Detectar preferencia del sistema
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('dark');
       } else {
@@ -47,13 +57,6 @@
         }
       });
     </script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      AOS.init({ duration: 800, once: true });
-    });
-  </script>
     </head>
 <body class="bg-[#FAF9F6] dark:bg-[#0d0d0d] text-slate-900 dark:text-slate-100 font-sans antialiased">
 
@@ -67,14 +70,14 @@
               <span class="text-[10px] font-medium text-slate-500 dark:text-slate-300 tracking-widest uppercase mt-0.5 block">& Territorio</span>
             </div>
           </a>
-                  <nav class="hidden lg:flex items-center gap-6 text-sm font-medium tracking-wide text-slate-600 dark:text-slate-300 uppercase">
-                    <a href="index.html#quienes-somos" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Quiénes Somos</a>
-                    <a href="index.html#areas" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Áreas</a>
-                    <a href="index.html#profesionales" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Profesionales</a>
-                    <a href="servicios.html" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5 border-b-2 border-red-800 font-semibold">Servicios</a>
-                    <a href="servicios.html#experiencia" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Experiencia</a>
-                    <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
-                  </nav>
+          <nav class="hidden lg:flex items-center gap-6 text-sm font-medium tracking-wide text-slate-600 dark:text-slate-300 uppercase">
+            <a href="index.html#quienes-somos" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Quiénes Somos</a>
+            <a href="index.html#areas" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Áreas</a>
+            <a href="index.html#profesionales" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Profesionales</a>
+            <a href="servicios.html" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5 border-b-2 border-red-800 font-semibold">Servicios</a>
+            <a href="servicios.html#experiencia" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Experiencia</a>
+            <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
+          </nav>
           <div class="flex items-center gap-3">
             <a href="index.html#contacto" class="px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-[10px] uppercase tracking-wider font-semibold rounded-none transition">Contactar</a>
           </div>
@@ -83,42 +86,73 @@
     </header>
 
     <main class="pt-20">
-      <section class="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
+      <!-- SERVICIOS CON IMÁGENES LOCALES -->
+      <section class="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
-            <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">Servicios</span>
-            <h2 class="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Soluciones concretas para territorios complejos</h2>
+            <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">Soluciones</span>
+            <h2 class="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Nuestra oferta de valor</h2>
           </div>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="p-4 border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition">
-              <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Diagnóstico Socioespacial</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Análisis integral de territorios con enfoque antropológico y geoespacial</p>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 1. Diagnóstico Socioespacial -->
+            <div class="border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+              <img src="assets/images/servicios/inteligencia-territorial.jpg" alt="Diagnóstico Socioespacial" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&h=250&fit=crop'"/>
+              <div class="p-4">
+                <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Diagnóstico Socioespacial</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Análisis integral de territorios con enfoque antropológico y geoespacial</p>
+              </div>
             </div>
-            <div class="p-4 border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition">
-              <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Evaluación de Impacto Territorial</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Medición de huella social y ambiental de proyectos</p>
+
+            <!-- 2. Evaluación de Impacto Territorial -->
+            <div class="border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+              <img src="assets/images/servicios/impacto-social.jpg" alt="Evaluación de Impacto Territorial" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=250&fit=crop'"/>
+              <div class="p-4">
+                <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Evaluación de Impacto Territorial</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Medición de huella social y ambiental de proyectos</p>
+              </div>
             </div>
-            <div class="p-4 border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition">
-              <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Planificación Territorial Participativa</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Procesos colaborativos con comunidades y actores locales</p>
+
+            <!-- 3. Planificación Territorial Participativa -->
+            <div class="border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+              <img src="assets/images/servicios/gobernanza.jpg" alt="Planificación Territorial Participativa" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600&h=250&fit=crop'"/>
+              <div class="p-4">
+                <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Planificación Territorial Participativa</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Procesos colaborativos con comunidades y actores locales</p>
+              </div>
             </div>
-            <div class="p-4 border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition">
-              <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Modelamiento Geoespacial Cualitativo</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Cruce de datos cuantitativos y cualitativos</p>
+
+            <!-- 4. Modelamiento Geoespacial Cualitativo -->
+            <div class="border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+              <img src="assets/images/servicios/analisis-datos.jpg" alt="Modelamiento Geoespacial" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=250&fit=crop'"/>
+              <div class="p-4">
+                <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Modelamiento Geoespacial Cualitativo</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Cruce de datos cuantitativos y cualitativos</p>
+              </div>
             </div>
-            <div class="p-4 border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition">
-              <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Asesoría en Políticas Públicas</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Minutas técnicas y recomendaciones para organismos públicos</p>
+
+            <!-- 5. Asesoría en Políticas Públicas -->
+            <div class="border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition overflow-hidden" data-aos="fade-up" data-aos-delay="500">
+              <img src="assets/images/servicios/politicas-publicas.jpg" alt="Políticas Públicas" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=250&fit=crop'"/>
+              <div class="p-4">
+                <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Asesoría en Políticas Públicas</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Minutas técnicas y recomendaciones para organismos públicos</p>
+              </div>
             </div>
-            <div class="p-4 border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition">
-              <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Capacitación y Transferencia</h3>
-              <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Formación en metodologías de inteligencia territorial</p>
+
+            <!-- 6. Capacitación y Transferencia -->
+            <div class="border border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d] hover:shadow-lg dark:shadow-black/40 hover:border-red-300 transition overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+              <img src="assets/images/servicios/formacion.jpg" alt="Capacitación" class="w-full h-48 object-cover" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=250&fit=crop'"/>
+              <div class="p-4">
+                <h3 class="font-title text-base font-semibold text-slate-900 dark:text-slate-100">Capacitación y Transferencia</h3>
+                <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-1 leading-relaxed">Formación en metodologías de inteligencia territorial</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="experiencia" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
+      <!-- EXPERIENCIA -->
+      <section id="experiencia" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
             <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">Experiencia</span>
@@ -163,7 +197,7 @@
             </div>
           </div>
           <div class="mt-8 relative overflow-hidden rounded-sm">
-            <img src="assets/images/servicios/inteligencia-territorial.jpg" alt="Río Biobío" class="w-full h-[200px] object-cover" />
+            <img src="https://images.unsplash.com/photo-1589399853627-9b3c21c5e047?w=1200&h=400&fit=crop" alt="Río Biobío" class="w-full h-[200px] object-cover" />
             <div class="absolute inset-0 bg-gradient-to-l from-slate-900/60 to-transparent flex items-center justify-end">
               <div class="p-6 text-white text-right">
                 <span class="text-xs font-mono tracking-widest bg-red-800 px-3 py-1 inline-block mb-2">Sur de Chile</span>
@@ -174,7 +208,8 @@
         </div>
       </section>
 
-      <section id="publicaciones" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
+      <!-- PUBLICACIONES -->
+      <section id="publicaciones" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]" data-aos="fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
           <div class="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
             <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">Publicaciones</span>

@@ -24,6 +24,14 @@
             }
         });
     </script>
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({ duration: 800, once: true });
+    });
+  </script>
 </head>
 <body class="bg-[#FAF9F6] dark:bg-[#0d0d0d] text-slate-900 dark:text-slate-100">
 
@@ -89,7 +97,7 @@
         </section>
 
         <!-- QUIÉNES SOMOS -->
-        <section id="quienes-somos" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
+        <section id="quienes-somos" data-aos="fade-up" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div class="space-y-4">
@@ -111,7 +119,7 @@
         </section>
 
         <!-- ÁREAS -->
-        <section id="areas" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
+        <section id="areas" data-aos="fade-up" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
                     <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">02 / Áreas de Especialización</span>
@@ -139,7 +147,7 @@
         </section>
 
         <!-- PROFESIONALES -->
-        <section id="profesionales" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
+        <section id="profesionales" data-aos="fade-up" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
                 <div class="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
                     <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">03 / Profesionales</span>
@@ -182,7 +190,7 @@
         </section>
 
         <!-- CONTACTO -->
-        <section id="contacto" class="py-12 bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-600">
+        <section id="contacto" data-aos="fade-up" class="py-12 bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-600">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
                 <div class="text-center mb-8">
                     <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-2">04 / Contacto</span>

@@ -142,6 +142,7 @@
           { id: 'areas', label: 'Áreas', link: 'index.html#areas' },
           { id: 'servicios', label: 'Servicios', link: 'servicios.html' },
           { id: 'experiencia', label: 'Experiencia', link: 'servicios.html#experiencia' },
+          { id: 'publicaciones', label: 'Publicaciones', link: 'servicios.html#publicaciones' },
           { id: 'profesionales', label: 'Profesionales', link: 'index.html#profesionales' }
         ];
         useEffect(() => {
@@ -149,7 +150,7 @@
             const scrollPosition = window.scrollY + 120;
             let current = 'inicio';
             const visibleItems = navItems.filter(item => 
-              !['servicios', 'experiencia'].includes(item.id)
+              !['servicios', 'experiencia', 'publicaciones'].includes(item.id)
             );
             visibleItems.forEach(item => {
               const element = document.getElementById(item.id);
@@ -191,6 +192,7 @@
                     <a href="index.html#profesionales" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "profesionales" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Profesionales</a>
                     <a href="servicios.html" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "servicios" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Servicios</a>
                     <a href="servicios.html#experiencia" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "experiencia" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Experiencia</a>
+                    <a href="servicios.html#publicaciones" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "publicaciones" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Publicaciones</a>
                     <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
                   </nav>
                   <div className="flex items-center gap-3">
@@ -222,7 +224,7 @@
                     <p className="text-slate-600 dark:text-slate-300 text-lg font-light leading-relaxed max-w-2xl">Cruce interdisciplinario de antropología avanzada, etnografía profunda y análisis geoespacial (GIS/Geodatos) para la gestión pública, industrial y ambiental.</p>
                     <div className="flex flex-wrap gap-4 pt-2">
                       <a href="index.html#contacto" className="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition flex items-center gap-2 shadow-sm dark:shadow-black/20">Solicitar Diagnóstico <ArrowRight /></a>
-                      <a href="servicios.html#experiencia" className="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition">Ver Casos de Estudio</a>
+                      <a href="servicios.html#experiencia" className="px-6 py-3.5 bg-slate-100 dark:bg-slate-800 text-white border border-slate-300 dark:border-slate-600 text-xs uppercase tracking-widest font-semibold hover:bg-slate-200 dark:hover:bg-slate-700 transition">Ver Casos de Estudio</a>
                     </div>
                   </div>
                   <div className="lg:col-span-5 space-y-4">
@@ -373,7 +375,11 @@
             </main>
             <footer className="py-8 bg-slate-900 dark:bg-black text-center text-xs text-slate-400 dark:text-slate-300 font-mono">
               <div className="max-w-7xl mx-auto px-4 sm:px-6">
-                <p>© {new Date().getFullYear()} Desarrollo Sostenible & Territorio · Santiago, Chile<br><span class="text-[10px] text-slate-500 dark:text-slate-400">Branding y desarrollo por <a href="http://www.2050lab.org" target="_blank" class="hover:text-red-700 transition">2050LAB</a></span></p>
+                <p>© {new Date().getFullYear()} Desarrollo Sostenible & Territorio · Santiago, Chile</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-300 mt-2">
+                  <a href="#" className="hover:text-slate-300">Política de Privacidad</a> · 
+                  <a href="#" className="hover:text-slate-300 ml-2">Términos y Condiciones</a>
+                </p>
               </div>
             </footer>
           </div>

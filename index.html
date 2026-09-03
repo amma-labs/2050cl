@@ -142,6 +142,7 @@
           { id: 'areas', label: 'Áreas', link: 'index.html#areas' },
           { id: 'servicios', label: 'Servicios', link: 'servicios.html' },
           { id: 'experiencia', label: 'Experiencia', link: 'servicios.html#experiencia' },
+          { id: 'publicaciones', label: 'Publicaciones', link: 'servicios.html#publicaciones' },
           { id: 'profesionales', label: 'Profesionales', link: 'index.html#profesionales' }
         ];
         useEffect(() => {
@@ -149,6 +150,7 @@
             const scrollPosition = window.scrollY + 120;
             let current = 'inicio';
             const visibleItems = navItems.filter(item => 
+              !['servicios', 'experiencia', 'publicaciones'].includes(item.id)
             );
             visibleItems.forEach(item => {
               const element = document.getElementById(item.id);
@@ -190,6 +192,7 @@
                     <a href="index.html#profesionales" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "profesionales" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Profesionales</a>
                     <a href="servicios.html" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "servicios" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Servicios</a>
                     <a href="servicios.html#experiencia" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "experiencia" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Experiencia</a>
+                    <a href="servicios.html#publicaciones" className={`hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ${activeSection === "publicaciones" ? "text-slate-900 dark:text-slate-100 border-b-2 border-red-800 font-semibold" : ""}`}>Publicaciones</a>
                     <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
                   </nav>
                   <div className="flex items-center gap-3">

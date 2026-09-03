@@ -5,12 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad · 2050 LAB</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-title { font-family: 'Inter', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+        .legal-content h1 { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; color: #1a1a1a; }
+        .legal-content h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2rem; margin-bottom: 0.75rem; color: #1a1a1a; }
+        .legal-content p { margin-bottom: 0.75rem; line-height: 1.7; color: #4a4a4a; }
+        .legal-content ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; }
+        .legal-content ul li { margin-bottom: 0.5rem; color: #4a4a4a; }
+        .dark .legal-content h1 { color: #f0f0f0; }
+        .dark .legal-content h2 { color: #e0e0e0; }
+        .dark .legal-content p { color: #c0c0c0; }
+        .dark .legal-content ul li { color: #c0c0c0; }
+    </style>
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (e.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
 </head>
 <body class="bg-[#FAF9F6] dark:bg-[#0d0d0d] text-slate-900 dark:text-slate-100">
-    <div class="max-w-4xl mx-auto px-4 py-20">
-        <h1 class="text-3xl font-bold">Política de Privacidad</h1>
-        <p class="mt-4 text-slate-600 dark:text-slate-300">Contenido pendiente...</p>
-        <a href="index.html" class="mt-6 inline-block text-red-700 hover:underline">← Volver al inicio</a>
-    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#FAF9F6] dark:bg-[#0d0d0d]/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="h-20 flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="assets/favicon.svg" alt="2050 DS Chile" class="h-10 w-auto"/>
+                    <div>
+                        <span class="font-title text-base font-semibold text-slate-900 dark:text-slate-100 tracking-tight block leading-none">2050 DS Chile</span>
+                        <span class="text-[10px] font-medium text-slate-500 dark:text-slate-300 tracking-widest uppercase mt-0.5 block">Desarrollo Sostenible &amp; Territorio</span>
+                    </div>
+                </a>
+                <nav class="hidden lg:flex items-center gap-6 text-sm font-medium tracking-wide text-slate-600 dark:text-slate-300 uppercase">
+                    <a href="index.html#quienes-somos" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Quiénes Somos</a>
+                    <a href="index.html#areas" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Áreas</a>
+                    <a href="index.html#profesionales" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Profesionales</a>
+                    <a href="servicios.html" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Servicios</a>
+                    <a href="servicios.html#experiencia" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Experiencia</a>
+                    <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <a href="index.html#contacto" class="px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-[10px] uppercase tracking-wider font-semibold rounded-none transition">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+        <div class="legal-content bg-white dark:bg-[#1a1a1a] p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
+            <h1 class="font-title text-4xl font-medium text-slate-900 dark:text-slate-100">Política de Privacidad</h1>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-6"><strong>Última actualización:</strong> Septiembre 2026</p>
+
+            <p>En <strong>2050 LAB</strong> (en adelante, "la Consultora"), nos comprometemos a resguardar la privacidad y la seguridad de la información de los usuarios que navegan e interactúan a través de nuestro sitio web.</p>
+            <p>Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos tus datos personales conforme a la <strong>Ley N° 19.628 sobre Protección de la Vida Privada</strong> de la República de Chile y sus modificaciones.</p>
+
+            <h2>1. Información que recopilamos</h2>
+            <p>No requerimos el registro de usuarios para navegar por nuestro sitio web. La información personal que recopilamos se limita a:</p>
+            <ul>
+                <li><strong>Datos de contacto directo:</strong> Nombre, correo electrónico, teléfono y empresa u organización, proporcionados voluntariamente por el usuario a través de nuestros formularios de contacto, correos electrónicos directos o enlaces de WhatsApp.</li>
+                <li><strong>Datos de navegación (Cookies y analítica):</strong> Información técnica anónima como dirección IP, tipo de navegador, páginas visitadas y tiempo de permanencia, utilizada exclusivamente para medir y mejorar la experiencia de usuario.</li>
+            </ul>
+
+            <h2>2. Uso de la información</h2>
+            <p>Los datos recopilados se utilizan únicamente para:</p>
+            <ul>
+                <li>Responder a solicitudes de diagnóstico, cotizaciones o consultas comerciales y técnicas.</li>
+                <li>Coordinar reuniones o entregas de propuestas de servicios de inteligencia territorial.</li>
+                <li>Mejorar el rendimiento, diseño y contenidos de nuestro sitio web.</li>
+            </ul>
+            <p><strong>Garantía:</strong> No vendemos, alquilamos, cedemos ni compartimos tus datos personales con terceros con fines comerciales ni de marketing sin tu consentimiento expreso.</p>
+
+            <h2>3. Derechos del titular de los datos (ARCO)</h2>
+            <p>De conformidad con la legislación chilena, los usuarios tienen derecho a:</p>
+            <ul>
+                <li><strong>Acceder</strong> a los datos personales almacenados en nuestros registros.</li>
+                <li><strong>Rectificar</strong> o actualizar datos inexactos o desactualizados.</li>
+                <li><strong>Cancelar o eliminar</strong> sus datos personales cuando ya no sean necesarios para los fines informados.</li>
+                <li><strong>Oponerse</strong> al uso de sus datos para fines específicos.</li>
+            </ul>
+            <p>Para ejercer cualquiera de estos derechos, puedes enviar un correo electrónico indicando tu solicitud.</p>
+
+            <h2>4. Seguridad de los datos</h2>
+            <p>Adoptamos medidas de seguridad técnicas y organizativas estándar en la industria para proteger tus datos personales contra accesos no autorizados, pérdida, alteración o divulgación.</p>
+
+            <h2>5. Modificaciones</h2>
+            <p>Nos reservamos el derecho de actualizar esta Política de Privacidad para adaptarla a cambios legislativos o novedades en nuestros servicios. Cualquier cambio será publicado en esta misma página.</p>
+
+            <h2>6. Contacto</h2>
+            <p>Si tienes dudas sobre esta política o el tratamiento de tus datos, puedes escribirnos directamente a nuestro canal de contacto institucional disponible en la plataforma.</p>
+        </div>
+    </main>
+
+    <footer class="py-8 bg-slate-900 dark:bg-black text-center text-xs text-slate-400 dark:text-slate-300 font-mono">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <p class="text-[10px] tracking-widest text-slate-500 dark:text-slate-400">___________________________________________________________</p>
+            <p class="font-title text-sm font-semibold text-slate-100 dark:text-white tracking-tight mt-2">2050 DS Chile · Desarrollo Sostenible &amp; Inteligencia Territorial</p>
+            <p class="text-[10px] tracking-widest text-slate-500 dark:text-slate-400 mt-2">___________________________________________________________</p>
+            <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-3">© 2026 2050 LAB &nbsp;·&nbsp; <a href="terminos.html" class="hover:text-red-700 transition">Términos y Condiciones</a> &nbsp;·&nbsp; <a href="privacidad.html" class="hover:text-red-700 transition">Política de Privacidad</a></p>
+        </div>
+    </footer>
+
 </body>
 </html>

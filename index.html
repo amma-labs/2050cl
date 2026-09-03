@@ -66,6 +66,14 @@
         }
       });
     </script>
+  <!-- AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      AOS.init({ duration: 800, once: true });
+    });
+  </script>
     </head>
 <body class="bg-[#FAF9F6] dark:bg-[#0d0d0d] text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-slate-800 selection:text-white">
     <div id="root"></div>
@@ -247,7 +255,7 @@
                   </div>
                 </div>
               </section>
-              <section id="quienes-somos" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
+              <section id="quienes-somos" data-aos="fade-up" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-4">
@@ -267,29 +275,29 @@
                   </div>
                 </div>
               </section>
-              <section id="areas" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
+              <section id="areas" data-aos="fade-up" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
                     <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">02 / Áreas de Especialización</span>
                     <h2 className="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Nuestros pilares de trabajo</h2>
                   </div>
                   <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border" data-aos="fade-up" data-aos-delay="100" border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
                       <Compass />
                       <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Inteligencia Territorial</h3>
                       <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">Modelación de datos geoespaciales integrados con variables socio-demográficas.</p>
                     </div>
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border" data-aos="fade-up" data-aos-delay="100" border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
                       <MapPin />
                       <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Ordenamiento & PROT</h3>
                       <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">Asesoría en Planes Regionales de Ordenamiento Territorial y gestión de cuencas.</p>
                     </div>
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border" data-aos="fade-up" data-aos-delay="100" border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
                       <User />
                       <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Etnografía & Comunidades</h3>
                       <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">Trabajo de campo para evaluación de impacto social y relacionamiento territorial.</p>
                     </div>
-                    <div className="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
+                    <div className="p-6 border" data-aos="fade-up" data-aos-delay="100" border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition">
                       <BarChart />
                       <h3 className="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Policy Papers & Evidencia</h3>
                       <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">Informes de políticas públicas y minutas técnicas fundadas.</p>
@@ -306,7 +314,7 @@
                   </div>
                 </div>
               </section>
-              <section id="profesionales" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
+              <section id="profesionales" data-aos="fade-up" className="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                   <div className="mb-8 border-b border-slate-200 dark:border-slate-600 pb-4">
                     <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">03 / Profesionales</span>
@@ -337,7 +345,7 @@
                   </div>
                 </div>
               </section>
-              <section id="contacto" className="py-12 bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-600">
+              <section id="contacto" data-aos="fade-up" className="py-12 bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-600">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6">
                   <div className="text-center mb-8">
                     <span className="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-2">04 / Contacto</span>

@@ -60,31 +60,54 @@
                         <span class="font-title text-[10px] font-medium text-slate-500 dark:text-slate-300 tracking-widest uppercase mt-0.5 block">& Territorio</span>
                     </div>
                 </a>
+
+                <!-- Desktop Nav -->
                 <nav class="hidden lg:flex items-center gap-6 text-sm font-medium tracking-wide text-slate-600 dark:text-slate-300 uppercase">
-                    <a href="index.html#quienes-somos" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ">Quiénes Somos</a>
-                    <a href="index.html#areas" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ">Áreas</a>
-                    <a href="index.html#profesionales" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5 ">Profesionales</a>
+                    <a href="index.html#quienes-somos" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Quiénes Somos</a>
+                    <a href="index.html#areas" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Áreas</a>
+                    <a href="index.html#profesionales" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Profesionales</a>
                     <a href="servicios.html" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Servicios</a>
                     <a href="servicios.html#experiencia" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">Experiencia</a>
                     <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
                 </nav>
+
                 <div class="flex items-center gap-3">
-                    <a href="index.html#contacto" class="px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-[10px] uppercase tracking-wider font-semibold rounded-none transition">Contactar</a>
+                    <a href="index.html#contacto" class="hidden sm:inline-block px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-[10px] uppercase tracking-wider font-semibold rounded-none transition">Contactar</a>
+                    
+                    <!-- Botón Menú Sándwich para Móvil/Tablet -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 dark:text-slate-200 hover:text-red-800 focus:outline-none" aria-label="Abrir Menú">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon-bars" class="block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html#quienes-somos" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Quiénes Somos</a>
+            <a href="index.html#areas" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Áreas</a>
+            <a href="index.html#profesionales" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Profesionales</a>
+            <a href="servicios.html" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Servicios</a>
+            <a href="servicios.html#experiencia" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Experiencia</a>
+            <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">LAB</a>
+            <a href="index.html#contacto" class="mobile-link inline-block mt-2 px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-xs uppercase tracking-wider font-semibold transition w-full text-center">Contactar</a>
+        </div>
     </header>
+
     <!-- MAIN -->
     <main class="pt-20">
         <!-- SECCIÓN INICIO -->
         <section class="relative border-b border-slate-200 dark:border-slate-600 py-12 lg:py-16 bg-white dark:bg-[#0d0d0d]" data-aos="fade-up">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <h1 class="font-title text-4xl sm:text-5xl font-medium leading-[1.12] text-slate-900 dark:text-slate-100">Transformando datos socioespaciales en decisiones estratégicas de territorio.</h1>
-                    <p class="text-slate-600 dark:text-slate-300 text-lg font-light leading-relaxed max-w-2xl">Cruce interdisciplinario de antropología avanzada, etnografía profunda y análisis geoespacial (GIS/Geodatos) para la gestión pública, industrial y ambiental.</p>
-                    <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="index.html#contacto" class="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition flex items-center gap-2">Solicitar Diagnóstico →</a>
-                        <a href="servicios.html#experiencia" class="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition">Ver Casos de Estudio</a>
+                    <h1 class="font-title text-3xl sm:text-4xl lg:text-5xl font-medium leading-[1.12] text-slate-900 dark:text-slate-100">Transformando datos socioespaciales en decisiones estratégicas de territorio.</h1>
+                    <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg font-light leading-relaxed max-w-2xl">Cruce interdisciplinario de antropología avanzada, etnografía profunda y análisis geoespacial (GIS/Geodatos) para la gestión pública, industrial y ambiental.</p>
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                        <a href="index.html#contacto" class="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition text-center flex items-center justify-center gap-2">Solicitar Diagnóstico →</a>
+                        <a href="servicios.html#experiencia" class="px-6 py-3.5 bg-red-800 text-white text-xs uppercase tracking-widest font-semibold hover:bg-red-900 transition text-center">Ver Casos de Estudio</a>
                     </div>
                 </div>
                 <div class="lg:col-span-5 space-y-4">
@@ -107,6 +130,7 @@
                 </div>
             </div>
         </section>
+
         <!-- SECCIÓN QUIÉNES SOMOS -->
         <section id="quienes-somos" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d]" data-aos="fade-up">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -120,7 +144,7 @@
                         </div>
                     </div>
                     <div class="relative overflow-hidden rounded-sm">
-                        <img src="assets/images/valparaiso.jpg" alt="Valparaíso" class="w-full h-[300px] object-cover"/>
+                        <img src="assets/images/valparaiso.jpg" alt="Valparaíso" class="w-full h-[250px] sm:h-[300px] object-cover"/>
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4">
                             <span class="text-white text-xs font-mono tracking-widest">Valparaíso · Patrimonio y comunidad</span>
                         </div>
@@ -128,6 +152,7 @@
                 </div>
             </div>
         </section>
+
         <!-- SECCIÓN ÁREAS -->
         <section id="areas" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]" data-aos="fade-up">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -135,7 +160,7 @@
                     <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">02 / Áreas de Especialización</span>
                     <h2 class="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Nuestros pilares de trabajo</h2>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="p-6 border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] space-y-3 hover:border-red-300 transition" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Inteligencia Territorial</h3>
                         <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">Modelación de datos geoespaciales integrados con variables socio-demográficas.</p>
@@ -155,6 +180,7 @@
                 </div>
             </div>
         </section>
+
         <!-- SECCIÓN PROFESIONALES -->
         <section id="profesionales" class="py-12 border-b border-slate-200 dark:border-slate-600 bg-white dark:bg-[#0d0d0d]" data-aos="fade-up">
             <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -162,40 +188,90 @@
                     <span class="text-xs uppercase tracking-widest font-mono text-slate-500 dark:text-slate-300 block mb-1">03 / Profesionales</span>
                     <h2 class="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Nuestro equipo</h2>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition" data-aos="fade-up" data-aos-delay="100">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 gap-4">
+                    <!-- Bernardo Muñoz -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/bernardo-munoz.jpg" alt="Bernardo Muñoz" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">BM</span>';"/>
+                        </div>
                         <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Bernardo Muñoz</h3>
                         <p class="text-xs text-red-700 font-medium mt-1">Director</p>
                         <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Antropólogo · Doctor en Antropología (Universidad de Tübingen) · Especialista en etnodesarrollo, turismo sostenible y gobernanza indígena</p>
                     </div>
-                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition" data-aos="fade-up" data-aos-delay="200">
+
+                    <!-- Joaquín Vigueras -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/joaquin-vigueras.jpg" alt="Joaquín Vigueras" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">JV</span>';"/>
+                        </div>
                         <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Joaquín Vigueras</h3>
                         <p class="text-xs text-red-700 font-medium mt-1">Analista</p>
                         <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Geodatos y modelamiento · Political Scientist · Especialista en inteligencia territorial y análisis de riesgos</p>
                     </div>
-                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition" data-aos="fade-up" data-aos-delay="300">
+
+                    <!-- Jordi Tresserras Juan -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/jordi-tresserras.jpg" alt="Jordi Tresserras Juan" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">JT</span>';"/>
+                        </div>
                         <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Jordi Tresserras Juan</h3>
-                        <p class="text-xs text-red-700 font-medium mt-1">Consultor Senior</p>
+                        <p class="text-xs text-red-700 font-medium mt-1">Consultor Asociado</p>
                         <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Doctor en Geografía e Historia · Patrimonio, turismo cultural y economía creativa</p>
                     </div>
-                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition" data-aos="fade-up" data-aos-delay="400">
-                        <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Franco Carreño</h3>
-                        <p class="text-xs text-red-700 font-medium mt-1">Investigador</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Historiador · Becario ANID · Especialista en historia política y social latinoamericana</p>
+
+                    <!-- Claudio Maggi -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/claudio-maggi.jpg" alt="Claudio Maggi" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">CM</span>';"/>
+                        </div>
+                        <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Claudio Maggi</h3>
+                        <p class="text-xs text-red-700 font-medium mt-1">Consultor Asociado</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">M.Sc. Industrial Engineer · Innovación y transferencia con triple impacto · Especialista en competitividad regional</p>
                     </div>
-                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition" data-aos="fade-up" data-aos-delay="500">
+
+                    <!-- Verónica Bustamante -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/veronica-bustamante.jpg" alt="Verónica Bustamante" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">VB</span>';"/>
+                        </div>
                         <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Verónica Bustamante</h3>
-                        <p class="text-xs text-red-700 font-medium mt-1">Consultora</p>
+                        <p class="text-xs text-red-700 font-medium mt-1">Consultora Asociada</p>
                         <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Magíster en Gestión del Patrimonio y Turismo Sostenible · Especialista en desarrollo local y gobernanza territorial</p>
                     </div>
-                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition" data-aos="fade-up" data-aos-delay="600">
-                        <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Claudio Maggi</h3>
+
+                    <!-- Gonzalo Silva -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="600">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/gonzalo-silva.jpg" alt="Gonzalo Silva" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">GS</span>';"/>
+                        </div>
+                        <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Gonzalo Silva</h3>
                         <p class="text-xs text-red-700 font-medium mt-1">Consultor</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">M.Sc. Industrial Engineer · Innovación y transferencia con triple impacto · Especialista en competitividad regional</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Magíster en Historia · Especialista en investigación histórica, patrimonio y procesos socioculturales</p>
+                    </div>
+
+                    <!-- Franco Carreño -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="700">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/franco-carreno.jpg" alt="Franco Carreño" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">FC</span>';"/>
+                        </div>
+                        <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Franco Carreño</h3>
+                        <p class="text-xs text-red-700 font-medium mt-1">Consultor</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Historiador · Becario ANID · Especialista en historia política y social latinoamericana</p>
+                    </div>
+
+                    <!-- Rodrigo González -->
+                    <div class="border border-slate-200 dark:border-slate-600 bg-[#FAF9F6] dark:bg-[#0d0d0d] p-6 text-center hover:border-red-300 transition flex flex-col items-center" data-aos="fade-up" data-aos-delay="800">
+                        <div class="w-24 h-24 mb-4 rounded-full overflow-hidden bg-slate-200 dark:bg-slate-700 flex items-center justify-center border-2 border-slate-300 dark:border-slate-600">
+                            <img src="assets/images/equipo/rodrigo-gonzalez.jpg" alt="Rodrigo González" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\"font-title font-bold text-lg text-slate-600 dark:text-slate-300\">RG</span>';"/>
+                        </div>
+                        <h3 class="font-title text-lg font-semibold text-slate-900 dark:text-slate-100">Rodrigo González</h3>
+                        <p class="text-xs text-red-700 font-medium mt-1">Abogado</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 font-light mt-3 leading-relaxed">Abogado · Especialista en derecho ambiental, regulatorio y marcos normativos de desarrollo territorial</p>
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- SECCIÓN CONTACTO -->
         <section id="contacto" class="py-12 bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-600" data-aos="fade-up">
             <div class="max-w-4xl mx-auto px-4 sm:px-6">
@@ -204,7 +280,7 @@
                     <h2 class="font-title text-3xl font-medium text-slate-900 dark:text-slate-100">Hablemos de tu proyecto</h2>
                     <p class="text-slate-600 dark:text-slate-300 text-sm font-light mt-4 max-w-2xl mx-auto">Escríbenos por WhatsApp o correo y te responderemos a la brevedad.</p>
                 </div>
-                <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
                     <a href="https://wa.me/56936772028" target="_blank" class="block bg-white dark:bg-[#0d0d0d] border-2 border-red-800 hover:bg-red-800 p-8 text-center transition group">
                         <h3 class="font-title text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-white transition">WhatsApp</h3>
                         <p class="text-sm text-slate-500 dark:text-slate-300 group-hover:text-white transition mt-2">+56 9 3677 2028</p>
@@ -217,6 +293,7 @@
             </div>
         </section>
     </main>
+
     <!-- FOOTER -->
     <footer class="py-8 bg-slate-900 dark:bg-black text-center text-xs text-slate-400 dark:text-slate-300 font-mono">
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -226,5 +303,47 @@
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-3">© 2026 2050 LAB &nbsp;·&nbsp; <a href="terminos.html" class="hover:text-red-700 transition">Términos y Condiciones</a> &nbsp;·&nbsp; <a href="privacidad.html" class="hover:text-red-700 transition">Política de Privacidad</a></p>
         </div>
     </footer>
+
+    <!-- Script Menú Móvil -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btn = document.getElementById("mobile-menu-btn");
+            const menu = document.getElementById("mobile-menu");
+            const iconBars = document.getElementById("menu-icon-bars");
+            const iconClose = document.getElementById("menu-icon-close");
+            const links = document.querySelectorAll(".mobile-link");
+
+            if (btn && menu) {
+                btn.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle("hidden");
+                    if (iconBars && iconClose) {
+                        iconBars.classList.toggle("hidden");
+                        iconClose.classList.toggle("hidden");
+                    }
+                });
+
+                links.forEach(function(link) {
+                    link.addEventListener("click", function() {
+                        menu.classList.add("hidden");
+                        if (iconBars && iconClose) {
+                            iconBars.classList.remove("hidden");
+                            iconClose.classList.add("hidden");
+                        }
+                    });
+                });
+
+                document.addEventListener("click", function(e) {
+                    if (!menu.classList.contains("hidden") && !menu.contains(e.target) && !btn.contains(e.target)) {
+                        menu.classList.add("hidden");
+                        if (iconBars && iconClose) {
+                            iconBars.classList.remove("hidden");
+                            iconClose.classList.add("hidden");
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

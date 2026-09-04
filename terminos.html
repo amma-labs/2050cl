@@ -55,13 +55,38 @@
                     <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 dark:text-slate-100 transition pb-0.5">LAB</a>
                 </nav>
                 <div class="flex items-center gap-3">
+                    <!-- Botón Menú Sándwich para Móvil/Tablet -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 dark:text-slate-200 hover:text-red-800 focus:outline-none" aria-label="Abrir Menú">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon-bars" class="block" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
                     <a href="index.html#contacto" class="px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-[10px] uppercase tracking-wider font-semibold rounded-none transition">Contactar</a>
                 </div>
             </div>
         </div>
     </header>
 
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#FAF9F6] dark:bg-[#0d0d0d] border-b border-slate-200 dark:border-slate-700 px-4 pt-2 pb-6 space-y-3 fixed top-20 left-0 right-0 z-40 shadow-lg">
+        <a href="index.html#quienes-somos" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Quiénes Somos</a>
+        <a href="index.html#areas" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Áreas</a>
+        <a href="index.html#profesionales" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Profesionales</a>
+        <a href="servicios.html" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Servicios</a>
+        <a href="servicios.html#experiencia" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">Experiencia</a>
+        <a href="http://www.2050lab.org" target="_blank" rel="noopener noreferrer" class="mobile-link block text-sm font-medium uppercase tracking-wide text-slate-700 dark:text-slate-200 hover:text-red-800 py-1">LAB</a>
+        <a href="index.html#contacto" class="mobile-link inline-block mt-2 px-4 py-2 bg-red-800 hover:bg-red-900 text-white text-xs uppercase tracking-wider font-semibold transition w-full text-center">Contactar</a>
+    </div>
+
     <main class="pt-24 max-w-4xl mx-auto px-4 sm:px-6 pb-12">
+
+    <!-- LOGO 2050 LAB -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 pt-6 pb-2">
+        <div class="flex justify-center">
+            <img src="assets/images/equipo/2050LAB logo.png" alt="2050 LAB" class="h-16 w-auto object-contain"/>
+        </div>
+    </div>
         <div class="legal-content bg-white dark:bg-[#1a1a1a] p-8 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700">
             <h1 class="font-title text-4xl font-medium text-slate-900 dark:text-slate-100">Términos y Condiciones de Uso</h1>
             <p class="text-sm text-slate-500 dark:text-slate-400 mb-6"><strong>Última actualización:</strong> Septiembre 2026</p>
@@ -107,6 +132,48 @@
             <p class="text-[10px] tracking-widest text-slate-500 dark:text-slate-400 mt-2">___________________________________________________________</p>
             <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-3">© 2026 2050 LAB &nbsp;·&nbsp; <a href="terminos.html" class="hover:text-red-700 transition">Términos y Condiciones</a> &nbsp;·&nbsp; <a href="privacidad.html" class="hover:text-red-700 transition">Política de Privacidad</a></p>
         </div>
+
+    <!-- Script Menú Móvil -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btn = document.getElementById("mobile-menu-btn");
+            const menu = document.getElementById("mobile-menu");
+            const iconBars = document.getElementById("menu-icon-bars");
+            const iconClose = document.getElementById("menu-icon-close");
+            const links = document.querySelectorAll(".mobile-link");
+
+            if (btn && menu) {
+                btn.addEventListener("click", function(e) {
+                    e.stopPropagation();
+                    menu.classList.toggle("hidden");
+                    if (iconBars && iconClose) {
+                        iconBars.classList.toggle("hidden");
+                        iconClose.classList.toggle("hidden");
+                    }
+                });
+
+                links.forEach(function(link) {
+                    link.addEventListener("click", function() {
+                        menu.classList.add("hidden");
+                        if (iconBars && iconClose) {
+                            iconBars.classList.remove("hidden");
+                            iconClose.classList.add("hidden");
+                        }
+                    });
+                });
+
+                document.addEventListener("click", function(e) {
+                    if (!menu.classList.contains("hidden") && !menu.contains(e.target) && !btn.contains(e.target)) {
+                        menu.classList.add("hidden");
+                        if (iconBars && iconClose) {
+                            iconBars.classList.remove("hidden");
+                            iconClose.classList.add("hidden");
+                        }
+                    }
+                });
+            }
+        });
+    </script>
     </footer>
 
 </body>
